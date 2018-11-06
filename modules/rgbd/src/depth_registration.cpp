@@ -146,7 +146,8 @@ namespace rgbd
         // Apply the initial projection to the input depth
         Mat_<Point3f> transformedCloud;
         {
-            Mat_<Point3f> point_tmp(outputImagePlaneSize);
+            Size inputImagePlaneSize(unregisteredDepth.cols, unregisteredDepth.rows)
+            Mat_<Point3f> point_tmp(inputImagePlaneSize);
 
             for(int j = 0; j < point_tmp.rows; ++j)
             {
